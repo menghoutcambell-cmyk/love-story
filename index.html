@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Love Story ❤️</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Georgia,serif;
+  background:#fff5f8;color:#704052;
+}
+header{
+  padding:20px 12px;text-align:center;
+  background:#fffafd;position:sticky;top:0;z-index:5;
+  box-shadow:0 3px 15px #0000000c;
+}
+.logo{font-size:24px;color:#d34f7d}
+nav{display:flex;justify-content:center;gap:18px;margin-top:12px;flex-wrap:wrap}
+nav a{font:12px Arial;color:#a34d6c;text-decoration:none}
+.hero{
+  min-height:80vh;padding:60px 20px;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  background:linear-gradient(140deg,#ffe0eb,#fff5f5,#fbd5e2);
+}
+.hero-content{max-width:650px}
+.heart{font-size:48px;animation:beat 1.2s infinite}
+@keyframes beat{50%{transform:scale(1.2)}}
+.kicker{font:11px Arial;letter-spacing:4px;color:#b45b7b;margin-top:15px}
+h1{font-size:clamp(42px,10vw,75px);color:#c84776;margin:20px 0}
+.hero p{line-height:1.9;color:#925b70}
+.btn{
+  display:inline-block;padding:13px 25px;margin-top:18px;
+  border:0;border-radius:30px;background:#d34f7d;
+  color:white;text-decoration:none;cursor:pointer;font-size:14px;
+}
+section{padding:65px 18px;text-align:center;scroll-margin-top:100px}
+.section-title{font-size:34px;color:#c84776;margin-bottom:12px}
+.subtitle{font:13px Arial;color:#a47788;margin-bottom:25px}
+.card{
+  max-width:620px;margin:20px auto;padding:25px;
+  background:white;border:1px solid #f9dce6;
+  border-radius:22px;box-shadow:0 10px 35px #b94c7010;
+}
+input,textarea{
+  width:100%;padding:13px;margin:8px 0;
+  border:1px solid #edc5d3;border-radius:12px;
+  background:#fffafb;font:14px Arial;color:#704052;
+}
+textarea{min-height:120px;resize:vertical}
+label{display:block;text-align:left;font:13px Arial;margin-top:12px}
+.names{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.counter{
+  font-size:clamp(23px,6vw,36px);
+  color:#d34f7d;margin:22px 0;
+}
+.units{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.unit{background:#fff0f5;border-radius:12px;padding:14px;min-width:75px}
+.unit strong{display:block;font-size:25px;color:#c84776}
+.unit small{font:11px Arial;color:#a47788}
+.photo-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:12px;margin-top:20px;
+}
+.photo-grid img{
+  width:100%;height:190px;object-fit:cover;
+  border-radius:14px;border:3px solid white;
+}
+.letter{
+  background:linear-gradient(140deg,#fff9fa,#ffe9f0);
+  padding:28px;border-radius:18px;line-height:2;
+  font-style:italic;white-space:pre-wrap;text-align:left;
+}
+footer{padding:35px;text-align:center;color:#bd6687;font-size:13px}
+@media(max-width:450px){
+  .names{grid-template-columns:1fr}
+  .photo-grid img{height:145px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">♡ Our Love Story ♡</div>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#us">OUR LOVE</a>
+    <a href="#memories">MEMORIES</a>
+    <a href="#letter">LOVE LETTER</a>
+    <a href="#settings">EDIT</a>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+  <div class="hero-content">
+    <div class="heart">❤️</div>
+    <div class="kicker">TWO HEARTS · ONE STORY</div>
+    <h1 id="heroTitle">Our Love Story</h1>
+    <p>Every love story is beautiful, but ours is my favorite.</p>
+    <p>Welcome to our little world of memories, love and forever.</p>
+    <a class="btn" href="#us">Explore Our Story ♡</a>
+  </div>
+</div>
+
+<section id="us">
+  <h2 class="section-title">Our Beautiful Journey</h2>
+  <p class="subtitle">Every second with you is a precious memory.</p>
+  <div class="card">
+    <div style="font-size:28px" id="coupleNames">You & Your Love ❤️</div>
+    <p style="margin-top:12px">Together since</p>
+    <div id="startDateText" style="color:#c84776;margin-top:8px">Our special day</div>
+    <div class="counter">We've been together for</div>
+    <div class="units">
+      <div class="unit"><strong id="days">0</strong><small>DAYS</small></div>
+      <div class="unit"><strong id="hours">0</strong><small>HOURS</small></div>
+      <div class="unit"><strong id="minutes">0</strong><small>MINUTES</small></div>
+      <div class="unit"><strong id="seconds">0</strong><small>SECONDS</small></div>
+    </div>
+    <p style="margin-top:22px;color:#c84776">And forever to go. 💗</p>
+  </div>
+</section>
+
+<section id="memories">
+  <h2 class="section-title">Our Memories 📸</h2>
+  <p class="subtitle">Little moments, endless love.</p>
+  <div class="card">
+    <label for="photoInput">Choose your favorite photos</label>
+    <input type="file" id="photoInput" accept="image/*" multiple>
+    <div class="photo-grid" id="photoGrid">
+      <div class="photo-placeholder">Your beautiful memories will appear here ♡</div>
+    </div>
+    <p style="font:12px Arial;color:#a47788;margin-top:15px">
+      Photos are previewed in this browser. Save the original pictures on your device too.
+    </p>
+  </div>
+</section>
+
+<section id="letter">
+  <h2 class="section-title">A Letter For You 💌</h2>
+  <p class="subtitle">Words from my heart.</p>
+  <div class="card">
+    <div class="letter" id="letterDisplay">My love,
+
+Every moment with you makes my life more beautiful.
+Thank you for being my happiness, my safe place,
+and my favorite person.
+
+I choose you today, tomorrow, and forever.
+
+With all my love,
+Your person ❤️</div>
+  </div>
+</section>
+
+<section id="settings">
+  <h2 class="section-title">Personalize Our Story</h2>
+  <p class="subtitle">Make this little website yours.</p>
+  <div class="card">
+    <label>Your name</label>
+    <div class="names">
+      <input id="name1" placeholder="Your name">
+      <input id="name2" placeholder="Your partner's name">
+    </div>
+    <label>Our anniversary date</label>
+    <input id="dateInput" type="date">
+    <label>Your love letter</label>
+    <textarea id="letterInput" placeholder="Write your love letter here..."></textarea>
+    <button class="btn" onclick="saveSettings()">Save Our Story ❤️</button>
+    <p id="status"></p>
+  </div>
+</section>
+
+<footer>
+  Made with ❤️ for two hearts, one forever.
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+
+function loadSettings(){
+  const saved = JSON.parse(localStorage.getItem("loveStorySettings") || "{}");
+  $("name1").value = saved.name1 || "";
+  $("name2").value = saved.name2 || "";
+  $("dateInput").value = saved.date || "";
+  $("letterInput").value = saved.letter || "";
+  updatePage(saved);
+}
+
+function updatePage(data){
+  const a = data.name1 || "You";
+  const b = data.name2 || "Your Love";
+  $("coupleNames").textContent = a + " & " + b + " ❤️";
+  $("heroTitle").textContent = a + " & " + b;
+  $("startDateText").textContent = data.date || "Choose your special day";
+  if(data.letter) $("letterDisplay").textContent = data.letter;
+}
+
+function saveSettings(){
+  const data = {
+    name1:$("name1").value.trim(),
+    name2:$("name2").value.trim(),
+    date:$("dateInput").value,
+    letter:$("letterInput").value.trim()
+  };
+
+  if(data.date && new Date(data.date + "T00:00:00") > new Date()){
+    $("status").textContent = "Please choose a date that is not in the future.";
+    return;
+  }
+
+  localStorage.setItem("loveStorySettings", JSON.stringify(data));
+  updatePage(data);
+  $("status").textContent = "Your love story has been saved on this browser! ❤️";
+  updateCounter();
+}
+
+function updateCounter(){
+  const saved = JSON.parse(localStorage.getItem("loveStorySettings") || "{}");
+  if(!saved.date){
+    ["days","hours","minutes","seconds"].forEach(id => $(id).textContent = "0");
+    return;
+  }
+
+  const start = new Date(saved.date + "T00:00:00");
+  let diff = Math.max(0, Date.now() - start.getTime());
+  const day = Math.floor(diff / 86400000);
+  diff %= 86400000;
+  const hour = Math.floor(diff / 3600000);
+  diff %= 3600000;
+  const minute = Math.floor(diff / 60000);
+  const second = Math.floor((diff % 60000) / 1000);
+
+  $("days").textContent = day;
+  $("hours").textContent = hour;
+  $("minutes").textContent = minute;
+  $("seconds").textContent = second;
+}
+
+$("photoInput").addEventListener("change", function(event){
+  const grid = $("photoGrid");
+  grid.innerHTML = "";
+  Array.from(event.target.files).forEach(file => {
+    if(!file.type.startsWith("image/")) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = document.createElement("img");
+      img.src = e.target.result;
+      img.alt = "Our memory";
+      grid.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+  });
+});
+
+loadSettings();
+updateCounter();
+setInterval(updateCounter,1000);
+</script>
+</body>
+</html>
